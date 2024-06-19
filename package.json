@@ -1,0 +1,31 @@
+{
+  "name": "olympus-contracts",
+  "version": "1.0.0",
+  "description": "Smart Contracts for Olympus",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/test-helpers": "^0.5.12",
+    "chai": "^4.3.4",
+    "dotenv": "^16.0.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.17",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "0.0.5"
+  },
+  "scripts": {
+    "test": "npx tronbox test",
+    "compile": "npx tronbox compile",
+    "clean": "npx tronbox clean",
+    "start": "npx tronbox run scripts/deployAll.js",
+    "lint:sol": "solhint -f table contracts/**/*.sol",
+    "testnet": "npx tronbox run --network tbinance scripts/deployAll.js",
+    "mainnet": "npx tronbox run --network mainnet scripts/deployAll.js",
+    "verify": "npx tronbox verify --network mainnet"
+  },
+  "dependencies": {
+    "tronbox": "^3.4.3"
+  }
+}
